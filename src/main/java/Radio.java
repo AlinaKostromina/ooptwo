@@ -1,11 +1,10 @@
 public class Radio {
-    public String name;
-    public int currentRadioStation; // номер текущей радиостанции
-    public int maxRadioStation = 9;
-    public int minRadioStation = 0;
-    public int currentVolume; // громкость звука
-    public int maxVolume = 100;
-    public int minVolume = 0;
+    private int currentRadioStation; // номер текущей радиостанции
+    private int maxRadioStation = 9;
+    private int minRadioStation = 0;
+    private int currentVolume; // громкость звука
+    private int maxVolume = 100;
+    private int minVolume = 0;
 
 
     // для громкости
