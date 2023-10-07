@@ -78,9 +78,6 @@
             </plugin>
         </plugins>
     </build>
+</project>
 
-<<<<<<< HEAD
-</project>
-=======
-</project>
->>>>>>> 68036f9 (CI added)
+
