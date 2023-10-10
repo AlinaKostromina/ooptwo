@@ -3,18 +3,30 @@ public class Radio {
     private int minRadioStation;
     private int maxRadioStation = 10;
     private int volume;
-    private int minVolume;
+    private int minVolume = 0;
     private int maxVolume = 100;
+    private int amountOfStation;
+    private int defaultAmountOfStation = 10;
 
     // создаем конструктор объекта
-    public Radio(int currentRadioStation, int maxRadioStation, int volume, int maxVolume) {
-        this.currentRadioStation = currentRadioStation;
-        this.maxRadioStation = maxRadioStation;
-        this.volume = volume;
-        this.maxVolume = maxVolume;
+    public Radio(int amountOfStation) {
+        this.amountOfStation = currentRadioStation;
+    }
+
+    public Radio() {
+        this.defaultAmountOfStation = currentRadioStation;
     }
 
     // для радио станции
+    public int getAmountOfStation() {
+        return amountOfStation;
+    }
+
+    public int setAmountOfStation() {
+        return amountOfStation;
+    }
+
+
     public int getCurrentRadioStation() {
         return currentRadioStation;
     }
@@ -34,7 +46,6 @@ public class Radio {
             this.currentRadioStation = maxRadioStation;
             return;
         }
-        this.currentRadioStation--;
     }
 
     public void changeOnNextRadioStation() {
@@ -42,7 +53,6 @@ public class Radio {
             this.currentRadioStation = minRadioStation;
             return;
         }
-        this.currentRadioStation++;
     }
 
     // для громкости
@@ -60,22 +70,22 @@ public class Radio {
         this.volume = volume;
     }
 
-    public void volumeUpForOne() {
-
-        if (volume == maxVolume) {
-            this.volume = volume;
-        }
-        if (volume < maxVolume) {
-            this.volume++;
-        }
-    }
-
-    public void volumeDownForOne() {
-        if (volume == minVolume) {
-            this.volume = volume;
-        }
-        if (volume > minVolume) {
-            this.volume--;
-        }
-    }
+//    public void volumeUpForOne() {
+//
+//        if (volume == maxVolume) {
+//            this.volume = volume;
+//        }
+//        if (volume < maxVolume) {
+//            this.volume++;
+//        }
+//    }
+//
+//    public void volumeDownForOne() {
+//        if (volume == minVolume) {
+//            this.volume = volume;
+//        }
+//        if (volume > minVolume) {
+//            this.volume--;
+//        }
+//    }
 }
