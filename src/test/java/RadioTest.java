@@ -32,7 +32,7 @@ class RadioTest {
 
     @Test
     void shouldNotChangeOnNextRadioStationIfStationIsMax() {
-        Radio radio = new Radio(10);
+        Radio radio = new Radio(); 
         radio.setCurrentRadioStation(radio.getAmountOfStation());
         radio.changeOnNextRadioStation();
         int expected = 0;
