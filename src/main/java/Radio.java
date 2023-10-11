@@ -10,11 +10,11 @@ public class Radio {
 
     // создаем конструктор объекта
     public Radio(int amountOfStation) {
-        this.amountOfStation = currentRadioStation;
+        this.amountOfStation = amountOfStation;
     }
 
     public Radio() {
-        this.defaultAmountOfStation = currentRadioStation;
+        this.defaultAmountOfStation = defaultAmountOfStation;
     }
 
     // для радио станции
@@ -22,10 +22,9 @@ public class Radio {
         return amountOfStation;
     }
 
-    public int setAmountOfStation() {
-        return amountOfStation;
+    public int defaultAmountOfStation() {
+        return defaultAmountOfStation;
     }
-
 
     public int getCurrentRadioStation() {
         return currentRadioStation;

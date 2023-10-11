@@ -44,7 +44,6 @@ class RadioTest {
     @Test
     void shouldSetVolumeIfVolumeIsOverMax() {
         Radio radio = new Radio(101);
-//        int volume = 101;
         radio.setVolume(radio.getAmountOfStation());
         int expected = 0;
         Assertions.assertEquals(expected, radio.getVolume());
@@ -53,7 +52,6 @@ class RadioTest {
     @Test
     void shouldSetVolumeIfVolumeIsUnderMin() {
         Radio radio = new Radio(-1);
-//        int volume = -1;
         radio.setVolume(radio.getAmountOfStation());
         int expected = 0;
         Assertions.assertEquals(expected, radio.getVolume());
@@ -63,7 +61,7 @@ class RadioTest {
     void shouldNotChangeVolumeIfVolumeIsMax() {
         Radio radio = new Radio(100);
         radio.setVolume(radio.getAmountOfStation());
-        int expected = 0;
+        int expected = 100;
         Assertions.assertEquals(expected, radio.getVolume());
     }
 
