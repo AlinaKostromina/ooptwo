@@ -6,12 +6,21 @@ class RadioTest {
 
     // для радио станции
     @Test
-    void shouldSetCurrentRadioStationBackIfStationIsMin () {
+    void shouldSetCurrentRadioStationBackIfStationIsMin() {
         Radio radio = new Radio(0);
-
         radio.setCurrentStation(radio.getCountOfStation());
+
         int expected = 0;
         Assertions.assertEquals(expected, radio.getCountOfStation());
+    }
+
+    @Test
+    void shouldSetCurrentRadioStationBackIfStationIsBetweenMinAndMax() {
+        Radio radio = new Radio(40);
+        radio.setCurrentStation(radio.getCountOfStation());
+
+        int expected = radio.getCurrentStation();
+        Assertions.assertEquals(expected, radio.getCurrentStation());
     }
 
     @Test
@@ -29,16 +38,38 @@ class RadioTest {
         Radio radio = new Radio(0);
         radio.setCurrentStation(radio.getCountOfStation());
         radio.previousStation();
+
         int expected = radio.getMaxStation();
         Assertions.assertEquals(expected, radio.getCurrentStation());
     }
 
     @Test
-    void shouldNotChangeOnNextRadioStationIfStationIsMax() {
-        Radio radio = new Radio(0);
+    void shouldChangeOnNextRadioStationIfStationIsMax() {
+        Radio radio = new Radio(200);
         radio.setCurrentStation(radio.getCountOfStation());
         radio.nextStation();
+
+        int expected = radio.getMaxStation();
+        Assertions.assertEquals(expected, radio.getCountOfStation() -1);
+    }
+
+    @Test
+    void shouldChangeOnNextRadioStationIfStationIsMaxWithMin() {
+        Radio radio = new Radio(150);
+//        radio.getMaxStation();
+        radio.setCurrentStation(radio.getMaxStation());
+        radio.nextStation();
+
         int expected = radio.getMinStation();
+        Assertions.assertEquals(expected, radio.getMinStation());
+    }
+
+    @Test
+    void shouldCheckIfDefaultStation() {
+        Radio radio = new Radio();
+        radio.setCurrentStation(radio.getCountOfStation());
+
+        int expected = radio.getCountOfStation();
         Assertions.assertEquals(expected, radio.getCountOfStation());
     }
 
